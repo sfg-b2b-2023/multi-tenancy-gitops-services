@@ -8,7 +8,7 @@ ibm-sfg-prod:
     image:
       repository: cp.icr.io/cp/ibm-sfg/sfg
     # Provide the tag value in double quotes
-      tag: 6.1.0.0
+      tag: 6.1.0.1
       pullPolicy: IfNotPresent
       pullSecret: ibm-entitlement-key
   serviceAccount:
@@ -36,7 +36,7 @@ ibm-sfg-prod:
     fsGroup: 1010
     runAsUser: 1010
   dataSetup:
-    enabled: true
+    enabled: false
     upgrade: false
   env:
     tz: "UTC"
@@ -64,7 +64,7 @@ ibm-sfg-prod:
     dbPort: 50000
     dbData: B2BIDB
     dbDrivers: db2jcc4.jar
-    dbCreateSchema: true
+    dbCreateSchema: false
     # Name of DB secret
     dbSecret: b2b-db-secret
     #Provide the admin email address
